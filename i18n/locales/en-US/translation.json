@@ -1,0 +1,23 @@
+{
+  "welcome": {
+    "skip": "Skip",
+    "onBoarding_1": {
+      "title:": "The perfect ride is just a tap away!",
+      "description:": "Your journey begins with RideNext. Find your ideal ride effortlessly."
+    },
+    "onBoarding_2": {
+      "title:": "Best car in your hands with RideNext",
+      "description:": "Discover the convenience of finding your perfect ride with RideNext."
+    },
+    "onBoarding_3": {
+      "title:": "Your ride, your way. Let's go!",
+      "description:": "Enter your destination, sit back, and let us take care of the rest."
+    }
+  },
+  "home": {
+    "no-rides:": "No recent rides found",
+    "welcome": "Welcome,  {{userName}} 👋",
+    "current-location": "Your current location",
+    "recent-rides": "Recent Rides"
+  }
+}

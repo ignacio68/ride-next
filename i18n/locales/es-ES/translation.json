@@ -1,0 +1,23 @@
+{
+  "welcome": {
+    "skip": "Saltar",
+    "onBoarding_1": {
+      "title:": "El viaje perfecto está a un toque de distancia!",
+      "description:": "Tu viaje comienza con RideNext. Encuentra tu viaje ideal sin esfuerzo."
+    },
+    "onBoarding_2": {
+      "title:": "El mejor coche en tus manos con RideNext",
+      "description:": "Descubre la comodidad de encontrar tu coche perfecto con RideNext."
+    },
+    "onBoarding_3": {
+      "title:": "Tu viaje, a tu manera ¡Vámonos!",
+      "description:": "Introduce tu destino, siéntate y deja que nosotros nos encarguemos del resto."
+    }
+  },
+  "home": {
+    "no-rides:": "No se han encontrado viajes recientes.",
+    "welcome": "Bienvenido, {{userName}} 👋",
+    "current-location": "Tu localización actual",
+    "recent-rides": "Viajes recientes"
+  }
+}
