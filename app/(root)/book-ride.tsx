@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/clerk-expo";
 import { StripeProvider } from "@stripe/stripe-react-native";
+import { useTranslation } from "react-i18next";
 import { Image, Text, View } from "react-native";
 
 import Payments from "@/components/Payments";
@@ -9,6 +10,7 @@ import { formatTime } from "@/lib/utils";
 import { useDriverStore, useLocationStore } from "@/store";
 
 const BookRide = () => {
+  const { t } = useTranslation();
   const { userAddress, destinationAddress } = useLocationStore();
   const { drivers, selectedDriver } = useDriverStore();
   const { user } = useUser();
@@ -23,10 +25,10 @@ const BookRide = () => {
       merchantIdentifier="merchant.uber.com" // required for Apple Pay
       urlScheme="myapp" // required for 3D Secure and bank redirects
     >
-      <RideLayout title="Book Ride" snapPoints={["45%", "85%"]}>
+      <RideLayout title={t("book-ride.title")} snapPoints={["85%"]}>
         <>
           <Text className="mb-3 font-JakartaSemiBold text-xl">
-            Ride Information
+            {t("book-ride.ride-information")}
           </Text>
 
           <View className="mt-10 flex w-full flex-col items-center justify-center">
@@ -55,21 +57,27 @@ const BookRide = () => {
 
           <View className="mt-5 flex w-full flex-col items-start justify-center rounded-3xl bg-general-600 px-5 py-3">
             <View className="flex w-full flex-row items-center justify-between border-b border-white py-3">
-              <Text className="font-JakartaRegular text-lg">Ride Price</Text>
+              <Text className="font-JakartaRegular text-lg">
+                {t("book-ride.ride-price")}
+              </Text>
               <Text className="font-JakartaRegular text-lg text-[#0CC25F]">
                 ${driverDetails?.price}
               </Text>
             </View>
 
             <View className="flex w-full flex-row items-center justify-between border-b border-white py-3">
-              <Text className="font-JakartaRegular text-lg">Pickup Time</Text>
+              <Text className="font-JakartaRegular text-lg">
+                {t("book-ride.pickup-time")}
+              </Text>
               <Text className="font-JakartaRegular text-lg">
                 {formatTime(parseInt(`${driverDetails?.time}`))}
               </Text>
             </View>
 
             <View className="flex w-full flex-row items-center justify-between py-3">
-              <Text className="font-JakartaRegular text-lg">Car Seats</Text>
+              <Text className="font-JakartaRegular text-lg">
+                {t("book-ride.car-seats")}
+              </Text>
               <Text className="font-JakartaRegular text-lg">
                 {driverDetails?.car_seats}
               </Text>

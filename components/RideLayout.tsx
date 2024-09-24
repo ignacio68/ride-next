@@ -1,6 +1,7 @@
 import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { router } from "expo-router";
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { View, Text, Pressable, Image } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
@@ -18,6 +19,7 @@ const RideLayout = ({
   snapPoints?: string[];
 }) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
+  const { t } = useTranslation();
 
   return (
     <GestureHandlerRootView>
@@ -34,7 +36,7 @@ const RideLayout = ({
               </View>
             </Pressable>
             <Text className="ml-5 font-JakartaSemiBold text-xl">
-              {title || "Go Back"}
+              {title || t("ride-layout.back")}
             </Text>
           </View>
           <Map />

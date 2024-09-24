@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { View, Image } from "react-native";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
@@ -13,13 +14,14 @@ const GoogleTextInput = ({
   textInputBackgroundColor,
   handlePress,
 }: GoogleInputProps) => {
+  const { t } = useTranslation();
   return (
     <View
       className={`relative z-50 flex flex-row items-center justify-center rounded-xl ${containerStyle} mb-5`}
     >
       <GooglePlacesAutocomplete
         fetchDetails={true}
-        placeholder="where you gone to go?"
+        placeholder={t("google-text-input.placeholder")}
         debounce={200}
         styles={{
           textInputContainer: {
@@ -74,7 +76,7 @@ const GoogleTextInput = ({
         )}
         textInputProps={{
           placeholderTextColor: "gray",
-          placeholder: initialLocation ?? "Where do you want to go?",
+          placeholder: initialLocation ?? t("google-text-input.placeholder"),
         }}
       />
     </View>

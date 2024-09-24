@@ -2,22 +2,114 @@
   "welcome": {
     "skip": "Skip",
     "onBoarding_1": {
-      "title:": "The perfect ride is just a tap away!",
-      "description:": "Your journey begins with RideNext. Find your ideal ride effortlessly."
+      "title": "The perfect ride is just a tap away!",
+      "description": "Your journey begins with RideNext. Find your ideal ride effortlessly."
     },
     "onBoarding_2": {
-      "title:": "Best car in your hands with RideNext",
-      "description:": "Discover the convenience of finding your perfect ride with RideNext."
+      "title": "Best car in your hands with RideNext",
+      "description": "Discover the convenience of finding your perfect ride with RideNext."
     },
     "onBoarding_3": {
-      "title:": "Your ride, your way. Let's go!",
-      "description:": "Enter your destination, sit back, and let us take care of the rest."
+      "title": "Your ride, your way. Let's go!",
+      "description": "Enter your destination, sit back, and let us take care of the rest."
+    },
+    "button": {
+      "get-started": "Get Started",
+      "sign-up": "Sign Up"
     }
   },
+  "sign-up": {
+    "title": "Create your account",
+    "name": "Name",
+    "name-placeholder": "Enter your name",
+    "email": "Email",
+    "email-placeholder": "Enter your email",
+    "password": "Password",
+    "password-placeholder": "Enter your password",
+    "sign-up": "Sign Up",
+    "have-account": "Already have an account? ",
+    "login": "Log In",
+    "verification": "Verification",
+    "send-code": " We've sent a verification code to {{email}}.",
+    "code": "Code",
+    "code-placeholder": "12345",
+    "verify-email": "Verify Email",
+    "success-title": "Verified",
+    "verify-description": "You have successfully verified your account."
+  },
+  "sign-in": {
+    "title": "Welcome 👋",
+    "email": "Email",
+    "email-placeholder": "Enter email",
+    "password": "Password",
+    "password-placeholder": "Enter password",
+    "sign-in": "Sign In",
+    "have-account": "Don't have an account? ",
+    "sign-up": "Sign Up"
+  },
+  "oauth": {
+    "or": "Or",
+    "log-in-with-google": "Log In with Google"
+  },
   "home": {
-    "no-rides:": "No recent rides found",
+    "no-rides": "No recent rides found",
     "welcome": "Welcome,  {{userName}} 👋",
     "current-location": "Your current location",
     "recent-rides": "Recent Rides"
+  },
+  "google-text-input": {
+    "placeholder": "Where do you want to go?"
+  },
+  "ride-card": {
+    "data-time": "Date & Time",
+    "driver": "Driver",
+    "car-seats": "Car Seats",
+    "payment-status": "Payment Status"
+  },
+  "find-ride": {
+    "title": "Ride",
+    "from": "From",
+    "to": "To",
+    "find-now": "Find now"
+  },
+  "confirm-ride": {
+    "title": "Choose a Rider",
+    "select-ride": "Select Ride"
+  },
+  "book-ride": {
+    "title": "Book Ride",
+    "ride-information": "Ride Information",
+    "ride-price": "Ride Price",
+    "pickup-time": "Pickup Time",
+    "car-seats": "Car Seats"
+  },
+  "driver-card": {
+    "seats": "{{seats}} seats"
+  },
+  "ride-layout": {
+    "back": "Go Back"
+  },
+  "payments": {
+    "confirm-ride": "Confirm Ride",
+    "successfully-booked": "Booking placed successfully",
+    "text": "Thank you for your booking. Your reservation has been successfullyplaced. Please proceed with your trip.",
+    "back": "Back Home"
+  },
+  "rides": {
+    "no-rides": "No recent rides found",
+    "all-rides": "All Rides"
+  },
+  "chat": {
+    "title": "Chat",
+    "no-messages": "No Messages Yet",
+    "start-conversation": "Start a conversation with your friends and family"
+  },
+  "profile": {
+    "title": "My profile",
+    "first-name": "First name",
+    "last-name": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "not-found": "Not Found"
   }
 }

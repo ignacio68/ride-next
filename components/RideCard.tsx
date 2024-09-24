@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Image, Text, View } from "react-native";
 
 import { icons } from "@/constants";
@@ -5,6 +6,8 @@ import { formatDate, formatTime } from "@/lib/utils";
 import { Ride } from "@/types/type";
 
 const RideCard = ({ ride }: { ride: Ride }) => {
+  const { t } = useTranslation();
+
   return (
     <View className="mb-3 flex flex-row items-center justify-center rounded-lg bg-white shadow-sm shadow-neutral-300">
       <View className="flex flex-col items-start justify-center p-3">
@@ -35,7 +38,7 @@ const RideCard = ({ ride }: { ride: Ride }) => {
         <View className="mt-5 flex w-full flex-col items-start justify-center rounded-lg bg-general-500 p-3">
           <View className="mb-5 flex w-full flex-row items-center justify-between">
             <Text className="text-md font-JakartaMedium text-gray-500">
-              Date & Time
+              {t("ride-card.data-time")}
             </Text>
             <Text className="text-md font-JakartaBold" numberOfLines={1}>
               {formatDate(ride.created_at)}, {formatTime(ride.ride_time)}
@@ -44,7 +47,7 @@ const RideCard = ({ ride }: { ride: Ride }) => {
 
           <View className="mb-5 flex w-full flex-row items-center justify-between">
             <Text className="text-md font-JakartaMedium text-gray-500">
-              Driver
+              {t("ride-card.driver")}
             </Text>
             <Text className="text-md font-JakartaBold">
               {ride.driver.first_name} {ride.driver.last_name}
@@ -53,7 +56,7 @@ const RideCard = ({ ride }: { ride: Ride }) => {
 
           <View className="mb-5 flex w-full flex-row items-center justify-between">
             <Text className="text-md font-JakartaMedium text-gray-500">
-              Car Seats
+              {t("ride-card.car-seats")}
             </Text>
             <Text className="text-md font-JakartaBold">
               {ride.driver.car_seats}
@@ -62,7 +65,7 @@ const RideCard = ({ ride }: { ride: Ride }) => {
 
           <View className="flex w-full flex-row items-center justify-between">
             <Text className="text-md font-JakartaMedium text-gray-500">
-              Payment Status
+              {t("ride-card.payment-status")}
             </Text>
             <Text
               className={`text-md font-JakartaBold capitalize text-red-500 ${ride.payment_status === "paid" ? "text-green-500" : "text-red-500"}`}

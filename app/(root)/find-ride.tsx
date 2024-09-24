@@ -1,4 +1,5 @@
 import { router } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { Text, View } from "react-native";
 
 import CustomButton from "@/components/CustomButton";
@@ -8,6 +9,7 @@ import { icons } from "@/constants";
 import { useLocationStore } from "@/store";
 
 const FindRide = () => {
+  const { t } = useTranslation();
   const {
     userAddress,
     destinationAddress,
@@ -15,9 +17,11 @@ const FindRide = () => {
     setUserLocation,
   } = useLocationStore();
   return (
-    <RideLayout title="Ride" snapPoints={["85%"]}>
+    <RideLayout title={t("find-ride.title")} snapPoints={["85%"]}>
       <View className="my-3">
-        <Text className="mb-3 font-JakartaSemiBold text-lg">From</Text>
+        <Text className="mb-3 font-JakartaSemiBold text-lg">
+          {t("find-ride.from")}
+        </Text>
         <GoogleTextInput
           icon={icons.target}
           initialLocation={userAddress!}
@@ -28,7 +32,9 @@ const FindRide = () => {
       </View>
 
       <View className="my-3">
-        <Text className="mb-3 font-JakartaSemiBold text-lg">To</Text>
+        <Text className="mb-3 font-JakartaSemiBold text-lg">
+          {t("find-ride.to")}
+        </Text>
         <GoogleTextInput
           icon={icons.map}
           initialLocation={destinationAddress!}
@@ -39,7 +45,7 @@ const FindRide = () => {
       </View>
 
       <CustomButton
-        title="Find now"
+        title={t("find-ride.find-now")}
         onPress={() => router.push("/(root)/confirm-ride")}
         className="mt-5"
       />

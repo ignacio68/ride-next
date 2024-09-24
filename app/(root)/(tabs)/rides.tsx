@@ -1,4 +1,5 @@
 import { useUser } from "@clerk/clerk-expo";
+import { useTranslation } from "react-i18next";
 import { FlatList, Text, View, Image, ActivityIndicator } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -8,6 +9,7 @@ import { useFetch } from "@/lib/fetch";
 import { Ride } from "@/types/type";
 
 const Rides = () => {
+  const { t } = useTranslation();
   const { user } = useUser();
   const { data: recentRides, loading } = useFetch<Ride[]>(
     `/(api)/ride/${user?.id}`,
@@ -32,7 +34,7 @@ const Rides = () => {
                   alt="No recent rides found"
                   resizeMode="contain"
                 />
-                <Text className="text-sm">No recent rides found</Text>
+                <Text className="text-sm">{t("rides.no-rides")}</Text>
               </>
             ) : (
               <ActivityIndicator size="small" color="#000" />
@@ -41,7 +43,9 @@ const Rides = () => {
         )}
         ListHeaderComponent={
           <>
-            <Text className="my-5 font-JakartaBold text-2xl">All Rides</Text>
+            <Text className="my-5 font-JakartaBold text-2xl">
+              {t("rides.all-rides")}
+            </Text>
           </>
         }
       />

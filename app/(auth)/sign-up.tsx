@@ -1,6 +1,7 @@
 import { useSignUp } from "@clerk/clerk-expo";
 import { Link, router } from "expo-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, Image, ScrollView, Text, View } from "react-native";
 import Modal from "react-native-modal";
 
@@ -11,6 +12,7 @@ import { icons, images } from "@/constants";
 import { fetchAPI } from "@/lib/fetch";
 
 const SignUp = () => {
+  const { t } = useTranslation();
   const { isLoaded, signUp, setActive } = useSignUp();
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
@@ -90,34 +92,34 @@ const SignUp = () => {
         <View className="relative h-[250px] w-full">
           <Image source={images.signUpCar} className="z-0 h-[250px] w-full" />
           <Text className="absolute bottom-5 left-5 font-JakartaSemiBold text-2xl text-black">
-            Create your account
+            {t("sign-up.title")}
           </Text>
         </View>
         <View className="p-5">
           <InputField
-            label="Name"
-            placeholder="Enter your name"
+            label={t("sign-up.name")}
+            placeholder={t("sign-up.name-placeholder")}
             icon={icons.person}
             value={form.name}
             onChangeText={(value) => setForm({ ...form, name: value })}
           />
           <InputField
-            label="Email"
-            placeholder="Enter your email"
+            label={t("sign-up.email")}
+            placeholder={t("sign-up.email-placeholder")}
             icon={icons.email}
             value={form.email}
             onChangeText={(value) => setForm({ ...form, email: value })}
           />
           <InputField
-            label="Password"
-            placeholder="Enter your password"
+            label={t("sign-up.password")}
+            placeholder={t("sign-up.password-placeholder")}
             icon={icons.lock}
             value={form.password}
             secureTextEntry={true}
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
           <CustomButton
-            title="Sign Up"
+            title={t("sign-up.sign-up")}
             onPress={onSignUpPress}
             className="mt-6"
           />
@@ -128,8 +130,8 @@ const SignUp = () => {
             href="/sign-in"
             className="mt-10 text-center text-lg text-general-200"
           >
-            Already have an account?{" "}
-            <Text classNam2bg-whitee="text-primary-500">Log In</Text>
+            {t("sign-up.have-account")}
+            <Text className="text-primary-500">{t("sign-up.login")}</Text>
           </Link>
         </View>
         <Modal
@@ -140,15 +142,15 @@ const SignUp = () => {
         >
           <View className="min-h-[300px] rounded-2xl bg-white px-7 py-9">
             <Text className="mb-2 font-JakartaExtraBold text-2xl">
-              Verification
+              {t("sign-up.verification")}
             </Text>
             <Text className="mb-5 font-Jakarta">
-              We've sent a verification code to {form.email}.
+              {t("sign-up.send-code", { email: form.email })}
             </Text>
             <InputField
-              label={"Code"}
+              label={t("sign-up.code")}
               icon={icons.lock}
-              placeholder={"12345"}
+              placeholder={t("sign-up.code-placeholder")}
               value={verification.code}
               keyboardType="numeric"
               onChangeText={(code) =>
@@ -161,7 +163,7 @@ const SignUp = () => {
               </Text>
             )}
             <CustomButton
-              title="Verify Email"
+              title={t("sign-up.verify-email")}
               onPress={onPressVerify}
               className="mt-5 bg-success-500"
             />
@@ -175,10 +177,10 @@ const SignUp = () => {
               className="mx-auto my-5 h-[110px] w-[110px]"
             />
             <Text className="text-center font-JakartaBold text-3xl">
-              Verified
+              {t("sign-up.success-title")}
             </Text>
             <Text className="mt-2 text-center font-Jakarta text-base text-gray-400">
-              You have successfully verified your account.
+              {t("sign-up.verify-description")}
             </Text>
             <CustomButton
               title="Browse Home"

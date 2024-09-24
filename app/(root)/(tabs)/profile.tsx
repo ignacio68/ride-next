@@ -1,10 +1,12 @@
 import { useUser } from "@clerk/clerk-expo";
+import { useTranslation } from "react-i18next";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import InputField from "@/components/InputField";
 
 const Profile = () => {
+  const { t } = useTranslation();
   const { user } = useUser();
 
   return (
@@ -13,7 +15,9 @@ const Profile = () => {
         className="px-5"
         contentContainerStyle={{ paddingBottom: 120 }}
       >
-        <Text className="my-5 font-JakartaBold text-2xl">My profile</Text>
+        <Text className="my-5 font-JakartaBold text-2xl">
+          {t("profile.title")}
+        </Text>
 
         <View className="my-5 flex items-center justify-center">
           <Image
@@ -28,25 +32,26 @@ const Profile = () => {
         <View className="flex flex-col items-start justify-center rounded-lg bg-white px-5 py-3 shadow-sm shadow-neutral-300">
           <View className="flex w-full flex-col items-start justify-start">
             <InputField
-              label="First name"
-              placeholder={user?.firstName || "Not Found"}
+              label={t("profile.first-name")}
+              placeholder={user?.firstName || t("profile.not-found")}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
             />
 
             <InputField
-              label="Last name"
-              placeholder={user?.lastName || "Not Found"}
+              label={t("profile.last-name")}
+              placeholder={user?.lastName || t("profile.not-found")}
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}
             />
 
             <InputField
-              label="Email"
+              label={t("profile.email")}
               placeholder={
-                user?.primaryEmailAddress?.emailAddress || "Not Found"
+                user?.primaryEmailAddress?.emailAddress ||
+                t("profile.not-found")
               }
               containerStyle="w-full"
               inputStyle="p-3.5"
@@ -54,8 +59,10 @@ const Profile = () => {
             />
 
             <InputField
-              label="Phone"
-              placeholder={user?.primaryPhoneNumber?.phoneNumber || "Not Found"}
+              label={t("profile.phone")}
+              placeholder={
+                user?.primaryPhoneNumber?.phoneNumber || t("profile.not-found")
+              }
               containerStyle="w-full"
               inputStyle="p-3.5"
               editable={false}

@@ -2,6 +2,7 @@ import { useAuth } from "@clerk/clerk-expo";
 import { useStripe } from "@stripe/stripe-react-native";
 import { router } from "expo-router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Alert, View, Image, Text } from "react-native";
 import ReactNativeModal from "react-native-modal";
 
@@ -19,6 +20,7 @@ const Payments = ({
   driverId,
   rideTime,
 }: PaymentProps) => {
+  const { t } = useTranslation();
   const { initPaymentSheet, presentPaymentSheet } = useStripe();
   const { userId } = useAuth();
   const [success, setSuccess] = useState(false);
@@ -33,7 +35,7 @@ const Payments = ({
 
   const initializePaymentSheet = async () => {
     const { error } = await initPaymentSheet({
-      merchantDisplayName: "Ryde Inc.",
+      merchantDisplayName: "RideNext Inc.",
       intentConfiguration: {
         mode: {
           amount: parseInt(amount) * 100,
@@ -115,7 +117,7 @@ const Payments = ({
   return (
     <>
       <CustomButton
-        title="Confirm Ride"
+        title={t("payments.confirm-ride")}
         className="my-10"
         onPress={openPaymentSheet}
       />
@@ -128,16 +130,15 @@ const Payments = ({
           <Image source={images.check} className="mt-5 h-28 w-28" />
 
           <Text className="mt-5 text-center font-JakartaBold text-2xl">
-            Booking placed successfully
+            {t("payments.successfully-booked")}
           </Text>
 
           <Text className="text-md font-JakartaRegular mt-3 text-center text-general-200">
-            Thank you for your booking. Your reservation has been successfully
-            placed. Please proceed with your trip.
+            {t("payments.text")}
           </Text>
 
           <CustomButton
-            title="Back Home"
+            title={t("payments.back")}
             onPress={() => {
               setSuccess(false);
               router.push("/(root)/(tabs)/home");

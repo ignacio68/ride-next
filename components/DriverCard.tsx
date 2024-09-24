@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Image, Text, Pressable, View } from "react-native";
 
 import { icons } from "@/constants";
@@ -5,6 +6,7 @@ import { formatTime } from "@/lib/utils";
 import { DriverCardProps } from "@/types/type";
 
 const DriverCard = ({ item, selected, setSelected }: DriverCardProps) => {
+  const { t } = useTranslation();
   return (
     <Pressable
       onPress={setSelected}
@@ -48,7 +50,7 @@ const DriverCard = ({ item, selected, setSelected }: DriverCardProps) => {
           </Text>
 
           <Text className="font-JakartaRegular text-sm text-general-800">
-            {item.car_seats} seats
+            {t("driver-card.seats", { seats: item.car_seats })}
           </Text>
         </View>
       </View>

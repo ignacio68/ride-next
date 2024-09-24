@@ -1,4 +1,5 @@
 import { router } from "expo-router";
+import { useTranslation } from "react-i18next";
 import { FlatList, View } from "react-native";
 
 import CustomButton from "@/components/CustomButton";
@@ -7,10 +8,11 @@ import RideLayout from "@/components/RideLayout";
 import { useDriverStore } from "@/store";
 
 const ConfirmRide = () => {
+  const { t } = useTranslation();
   const { drivers, selectedDriver, setSelectedDriver } = useDriverStore();
 
   return (
-    <RideLayout title={"Choose a Rider"} snapPoints={["65%", "85%"]}>
+    <RideLayout title={t("confirm-ride.title")} snapPoints={["65%", "85%"]}>
       <FlatList
         data={drivers}
         keyExtractor={(item, index) => index.toString()}
@@ -24,7 +26,7 @@ const ConfirmRide = () => {
         ListFooterComponent={() => (
           <View className="mx-5 mt-10">
             <CustomButton
-              title="Select Ride"
+              title={t("confirm-ride.select-ride")}
               onPress={() => router.push("/(root)/book-ride")}
             />
           </View>

@@ -52,18 +52,22 @@ const Home = () => {
             />
             <View className="mt-10 flex w-full flex-row items-center justify-center">
               <Text className="mx-10 text-center text-3xl font-bold text-black">
-                {item.title}
+                {t(item.title)}
               </Text>
             </View>
             <Text className="text-md mx-10 mt-3 text-center font-JakartaSemiBold text-[#858585]">
-              {item.description}
+              {t(item.description)}
             </Text>
           </View>
         ))}
       </Swiper>
 
       <CustomButton
-        title={isLastSlide ? "Get Started" : "Next"}
+        title={
+          isLastSlide
+            ? t("welcome.button.get-started")
+            : t("welcome.button.sign-up")
+        }
         onPress={() =>
           isLastSlide
             ? router.replace("/(auth)/sign-up")

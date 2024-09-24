@@ -1,6 +1,7 @@
 import { useOAuth } from "@clerk/clerk-expo";
 import { router } from "expo-router";
 import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Text, View, Image } from "react-native";
 
 import { icons } from "@/constants";
@@ -9,6 +10,7 @@ import { googleOAuth } from "@/lib/auth";
 import CustomButton from "./CustomButton";
 
 const OAuth = () => {
+  const { t } = useTranslation();
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
   const handledGoogleSignIn = useCallback(async () => {
@@ -26,12 +28,12 @@ const OAuth = () => {
     <View>
       <View className="mt-4 flex flex-row items-center justify-center gap-x-3">
         <View className="h-[1px] flex-1 bg-general-100" />
-        <Text className="text-lg">Or</Text>
+        <Text className="text-lg">{t("oauth.or")}</Text>
         <View className="h-[1px] flex-1 bg-general-100" />
       </View>
 
       <CustomButton
-        title="Log In with Google"
+        title={t("oauth.log-in-with-google")}
         className="mt-5 w-full shadow-none"
         IconLeft={() => (
           <Image

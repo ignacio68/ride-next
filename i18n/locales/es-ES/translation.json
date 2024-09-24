@@ -2,22 +2,114 @@
   "welcome": {
     "skip": "Saltar",
     "onBoarding_1": {
-      "title:": "El viaje perfecto está a un toque de distancia!",
-      "description:": "Tu viaje comienza con RideNext. Encuentra tu viaje ideal sin esfuerzo."
+      "title": "El viaje perfecto está a un toque de distancia!",
+      "description": "Tu viaje comienza con RideNext. Encuentra tu viaje ideal sin esfuerzo."
     },
     "onBoarding_2": {
-      "title:": "El mejor coche en tus manos con RideNext",
-      "description:": "Descubre la comodidad de encontrar tu coche perfecto con RideNext."
+      "title": "El mejor coche en tus manos con RideNext",
+      "description": "Descubre la comodidad de encontrar tu coche perfecto con RideNext."
     },
     "onBoarding_3": {
-      "title:": "Tu viaje, a tu manera ¡Vámonos!",
-      "description:": "Introduce tu destino, siéntate y deja que nosotros nos encarguemos del resto."
+      "title": "Tu viaje, a tu manera ¡Vámonos!",
+      "description": "Introduce tu destino, siéntate y deja que nosotros nos encarguemos del resto."
+    },
+    "button": {
+      "get-started": "Comenzar",
+      "sign-up": "Registrarse"
     }
   },
+  "sign-up": {
+    "title": "Crea tu cuenta",
+    "name": "Nombre",
+    "name-placeholder": "Introduce tu nombre",
+    "email": "Email",
+    "email-placeholder": "Introduce tu email",
+    "password": "Contraseña",
+    "password-placeholder": "Introduce tu contraseña",
+    "sign-up": "Regístrate",
+    "have-account": "¿Ya tienes una cuenta? ",
+    "login": "Iniciar sesión",
+    "verification": "Verificación",
+    "send-code": "Hemos enviado un código de verificación a {{email}}.",
+    "code": "Código",
+    "code-placeholder": "12345",
+    "verify-email": "Verificar email",
+    "success-title": "Verificado",
+    "verify-description": "Has verificado tu cuenta exitosamente."
+  },
+  "sign-in": {
+    "title": "Bienvenido 👋",
+    "email": "Email",
+    "email-placeholder": "Introduce tu email",
+    "password": "Contraseña",
+    "password-placeholder": "Introduce tu contraseña",
+    "sign-in": "Iniciar sesión",
+    "have-account": "¿No tienes una cuenta? ",
+    "sign-up": "Regístrate"
+  },
+  "oauth": {
+    "or": "O",
+    "log-in-with-google": "Iniciar sesión con Google"
+  },
   "home": {
-    "no-rides:": "No se han encontrado viajes recientes.",
+    "no-rides": "No se han encontrado viajes recientes.",
     "welcome": "Bienvenido, {{userName}} 👋",
     "current-location": "Tu localización actual",
     "recent-rides": "Viajes recientes"
+  },
+  "google-text-input": {
+    "placeholder": "¿Dónde quieres ir?"
+  },
+  "ride-card": {
+    "data-time": "Fecha y hora",
+    "driver": "Conductor",
+    "car-seats": "Asientos",
+    "payment-status": "Estado del pago"
+  },
+  "find-ride": {
+    "title": "Viaje",
+    "from": "De",
+    "to": "A",
+    "find-now": "Buscar"
+  },
+  "confirm-ride": {
+    "title": "Elige un conductor",
+    "select-ride": "Selecciona un viaje"
+  },
+  "book-ride": {
+    "title": "Reservar Viaje",
+    "ride-information": "Información de Viaje",
+    "ride-price": "Precio del Viaje",
+    "pickup-time": "Hora de recogida",
+    "car-seats": "Asientos de coche"
+  },
+  "driver-card": {
+    "seats": "{{seats}} asientos"
+  },
+  "ride-layout": {
+    "back": "Volver"
+  },
+  "payments": {
+    "confirm-ride": "Confirmar Viaje",
+    "successfully-booked": "Reserva realizada con éxito",
+    "text": "Gracias por su reserva. Su viaje ha sido reservado con éxito. Por favor, continúe con su viaje.",
+    "back": "Volver a la página de inicio"
+  },
+  "rides": {
+    "no-rides": "No se han encontrado viajes recientes.",
+    "all-rides": "Todos los Viajes"
+  },
+  "chat": {
+    "title": "Chat",
+    "no-messages": "Aún no hay mensajes",
+    "start-conversation": "Inicia una conversación con tus amigos y familiares"
+  },
+  "profile": {
+    "title": "Mi perfil",
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "email": "Email",
+    "phone": "Teléfono",
+    "not-found": "No hay datos"
   }
 }
