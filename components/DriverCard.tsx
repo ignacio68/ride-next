@@ -10,10 +10,13 @@ const DriverCard = ({ item, selected, setSelected }: DriverCardProps) => {
   return (
     <Pressable
       onPress={setSelected}
-      className={`${
+      className={`flex flex-row items-center justify-between rounded-xl px-3 py-5 ${
         selected === item.id ? "bg-general-600" : "bg-white"
-      } flex flex-row items-center justify-between rounded-xl px-3 py-5`}
+      }`}
     >
+      {/* <View>
+
+      </View> */}
       <Image
         source={{ uri: item.profile_image_url }}
         className="h-14 w-14 rounded-full"

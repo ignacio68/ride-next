@@ -17,7 +17,7 @@ const GoogleTextInput = ({
   const { t } = useTranslation();
   return (
     <View
-      className={`relative z-50 flex flex-row items-center justify-center rounded-xl ${containerStyle} mb-5`}
+      className={`relative z-50 mb-5 flex flex-row items-center justify-center rounded-xl ${containerStyle}`}
     >
       <GooglePlacesAutocomplete
         fetchDetails={true}
