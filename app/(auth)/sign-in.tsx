@@ -1,6 +1,6 @@
 import { useSignIn } from "@clerk/clerk-expo";
 import { Link, useRouter } from "expo-router";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Image, ScrollView, Text, View } from "react-native";
 
@@ -43,6 +43,12 @@ const SignIn = () => {
     }
   }, [isLoaded, signIn, form.email, form.password, setActive, router]);
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+
+  const handleTogglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
@@ -64,8 +70,10 @@ const SignIn = () => {
             label={t("sign-in.password")}
             placeholder={t("sign-in.password-placeholder")}
             icon={icons.lock}
+            iconRight={isPasswordVisible ? icons.eye : icons.eyecross}
+            iconRightPress={handleTogglePasswordVisibility}
             value={form.password}
-            secureTextEntry={true}
+            secureTextEntry={isPasswordVisible}
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
           <CustomButton
@@ -84,8 +92,6 @@ const SignIn = () => {
             <Text className="text-primary-500"> {t("sign-in.sign-up")}</Text>
           </Link>
         </View>
-
-        {/* Verification modal */}
       </View>
     </ScrollView>
   );

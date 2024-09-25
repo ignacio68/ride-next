@@ -86,6 +86,12 @@ const SignUp = () => {
     }
   };
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+
+  const handleTogglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
@@ -111,11 +117,13 @@ const SignUp = () => {
             onChangeText={(value) => setForm({ ...form, email: value })}
           />
           <InputField
-            label={t("sign-up.password")}
-            placeholder={t("sign-up.password-placeholder")}
+            label={t("sign-in.password")}
+            placeholder={t("sign-in.password-placeholder")}
             icon={icons.lock}
+            iconRight={isPasswordVisible ? icons.eye : icons.eyecross}
+            iconRightPress={handleTogglePasswordVisibility}
             value={form.password}
-            secureTextEntry={true}
+            secureTextEntry={isPasswordVisible}
             onChangeText={(value) => setForm({ ...form, password: value })}
           />
           <CustomButton

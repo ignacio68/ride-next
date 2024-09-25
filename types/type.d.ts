@@ -82,6 +82,8 @@ declare interface GoogleInputProps {
 declare interface InputFieldProps extends TextInputProps {
   label: string;
   icon?: any;
+  iconRight?: any;
+  iconRightPress?: () => void;
   secureTextEntry?: boolean;
   labelStyle?: string;
   containerStyle?: string;
