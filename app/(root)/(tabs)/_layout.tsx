@@ -1,32 +1,9 @@
 import { Tabs } from "expo-router";
-import { Image, ImageSourcePropType, View } from "react-native";
 
+import TabIcon from "@/components/TabIcon";
 import { icons } from "@/constants";
 
-const TabIcon = ({
-  source,
-  focused,
-}: {
-  source: ImageSourcePropType;
-  focused: boolean;
-}) => (
-  <View
-    className={`flex flex-row items-center justify-center rounded-full ${focused ? "bg-general-300" : ""}`}
-  >
-    <View
-      className={`h-12 w-12 items-center justify-center rounded-full ${focused ? "bg-general-400" : ""}`}
-    >
-      <Image
-        source={source}
-        tintColor="white"
-        resizeMode="contain"
-        className="h-7 w-7"
-      />
-    </View>
-  </View>
-);
-
-export default function Layout() {
+const Layout = () => {
   return (
     <Tabs
       initialRouteName="index"
@@ -92,4 +69,6 @@ export default function Layout() {
       />
     </Tabs>
   );
-}
+};
+
+export default Layout;
