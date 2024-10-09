@@ -22,6 +22,7 @@ const Home = () => {
       style={{ paddingTop: top, paddingBottom: bottom }}
     >
       <Pressable
+        testID="welcome_skip"
         onPress={() => {
           router.replace("/(auth)/sign-up");
         }}
@@ -33,6 +34,7 @@ const Home = () => {
       </Pressable>
 
       <Swiper
+        testID="welcome_swiper"
         ref={swiperRef}
         loop={false}
         dot={
@@ -46,6 +48,7 @@ const Home = () => {
         {onboarding.map((item) => (
           <View key={item.id} className="flex items-center justify-center p-5">
             <Image
+              testID={`welcome_swiper_image_${item.id}`}
               source={item.image}
               className="h-[300px] w-full"
               resizeMode="contain"
@@ -63,6 +66,7 @@ const Home = () => {
       </Swiper>
 
       <CustomButton
+        testID="welcome_button"
         title={
           isLastSlide
             ? t("welcome.button.get-started")

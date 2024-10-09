@@ -1,0 +1,15 @@
+appId: com.ignacio68.ridenext
+---
+- launchApp:
+    clearState: true
+- assertVisible: 
+    id: "welcome_skip"
+- assertVisible:
+    id: "welcome_swiper"
+- assertVisible:
+    id: "welcome_swiper_image_1"
+- assertVisible:
+    id: "welcome_button"
+- tapOn:
+    id: "welcome_skip"
+
