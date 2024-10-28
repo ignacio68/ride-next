@@ -1,2 +1,7 @@
 /.expo
+/.eas
+/.git
+/android
+/coverage
+/ios
 node_modules
