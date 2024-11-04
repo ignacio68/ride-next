@@ -8,5 +8,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["Lngs", "Vámonos"]
+  "cSpell.words": ["gorhom", "Lngs", "Vámonos", "zustand"]
 }

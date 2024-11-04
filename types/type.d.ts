@@ -73,9 +73,9 @@ declare interface GoogleInputProps {
     longitude,
     address,
   }: {
-    latitude: number;
-    longitude: number;
-    address: string;
+    latitude: number | undefined;
+    longitude: number | undefined;
+    address: string | undefined;
   }) => void;
 }
 

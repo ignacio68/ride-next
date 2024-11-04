@@ -1,5 +1,5 @@
 node_modules/
-.expo/
+.git/
 dist/
 npm-debug.*
 *.jks
@@ -27,6 +27,7 @@ node_modules/
 
 # Expo
 .expo/
+.eas/
 dist/
 web-build/
 
