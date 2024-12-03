@@ -2,6 +2,13 @@
 module.exports = {
   extends: ["expo", "prettier"],
   plugins: ["prettier", "import"],
+  overrides: [
+    {
+      // Test files only
+      files: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      extends: ["plugin:testing-library/react"],
+    },
+  ],
   rules: {
     "prettier/prettier": "error",
     "import/order": [
