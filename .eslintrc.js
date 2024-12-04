@@ -1,15 +1,8 @@
 // https://docs.expo.dev/guides/using-eslint/
 module.exports = {
   root: true,
-  parser: "hermes-eslint",
-  plugins: ["prettier", "import", "ft-flow", "jest"],
-  extends: [
-    "expo",
-    "prettier",
-    "eslint:recommended",
-    "plugin:ft-flow/recommended",
-    "plugin:jest/recommended",
-  ],
+  plugins: ["prettier", "import", "jest"],
+  extends: ["expo", "prettier", "plugin:jest/recommended"],
   env: {
     "jest/globals": true,
   },
