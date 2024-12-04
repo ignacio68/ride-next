@@ -75,6 +75,7 @@ const SignIn = () => {
             value={form.password}
             secureTextEntry={isPasswordVisible}
             onChangeText={(value) => setForm({ ...form, password: value })}
+            testID="toggle-password-visibility"
           />
           <CustomButton
             title={t("sign-in.sign-in")}
