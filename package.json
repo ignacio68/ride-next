@@ -47,7 +47,7 @@
     "react-dom": "18.2.0",
     "react-error-boundary": "^4.1.2",
     "react-i18next": "~15.0.2",
-    "react-native": "0.74.5",
+    "react-native": "0.82.1",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-google-places-autocomplete": "~2.5.6",
     "react-native-maps": "1.14.0",
